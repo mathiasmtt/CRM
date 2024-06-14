@@ -1,0 +1,85 @@
+body {
+    margin-top: 20px;
+    color: #1a202c;
+    text-align: left;
+    background-color: #e2e8f0;
+}
+.main-body {
+    padding: 15px;
+}
+.card {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+.card-body {
+    padding: 1.5rem;
+}
+.bg-primary {
+    background-color: #007bff !important;
+}
+.p-1 {
+    padding: 0.25rem !important;
+}
+.rounded-circle {
+    border-radius: 50% !important;
+}
+.mt-3 {
+    margin-top: 1rem !important;
+}
+.text-secondary {
+    color: #6c757d !important;
+}
+.text-muted {
+    color: #6c757d !important;
+}
+.font-size-sm {
+    font-size: 0.875rem !important;
+}
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+.progress {
+    height: 5px;
+}
+.progress-bar {
+    height: 5px;
+}
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* CSS para el toggle dark/light */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+body.dark-mode .navbar-light {
+    background-color: #555;
+}
+body.dark-mode .card {
+    background-color: #444;
+    color: #fff;
+}
+body.dark-mode .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+body.dark-mode .btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
