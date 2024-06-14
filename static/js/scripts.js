@@ -4,11 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (currentTheme === 'dark') {
         document.body.classList.add('dark-mode');
-        document.body.classList.remove('light-mode');
         toggleButton.classList.add('dark-mode');
     } else {
         document.body.classList.add('light-mode');
-        document.body.classList.remove('dark-mode');
     }
     
     toggleButton.addEventListener('click', function() {

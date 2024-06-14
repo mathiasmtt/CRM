@@ -31,6 +31,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'profile' %}">Profile</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a>
+                            </li>
                             {% if 'Administradores' in user_groups %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'propietarios_index' %}">Propietarios</a>
@@ -44,10 +47,61 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'user_list' %}">User List</a>
                                 </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="sectoresDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Sectores
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="sectoresDropdown">
+                                        <a class="dropdown-item" href="{% url 'contabilidad' %}">Contabilidad</a>
+                                        <a class="dropdown-item" href="{% url 'financiero' %}">Financiero</a>
+                                        <a class="dropdown-item" href="{% url 'societario' %}">Societario</a>
+                                    </div>
+                                </li>
+                            {% elif 'Propietarios' in user_groups %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'propietarios_index' %}">Propietarios</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'clientes_index' %}">Clientes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'seguridad_index' %}">Seguridad</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'user_list' %}">User List</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="sectoresDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Sectores
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="sectoresDropdown">
+                                        <a class="dropdown-item" href="{% url 'contabilidad' %}">Contabilidad</a>
+                                        <a class="dropdown-item" href="{% url 'financiero' %}">Financiero</a>
+                                        <a class="dropdown-item" href="{% url 'societario' %}">Societario</a>
+                                    </div>
+                                </li>
                             {% elif 'Clientes' in user_groups %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'clientes_index' %}">Clientes</a>
                                 </li>
+                            {% elif 'Proveedores' in user_groups %}
+                                <!-- Proveedores solo ven las opciones por defecto -->
+                            {% elif 'Empleados' in user_groups %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'clientes_index' %}">Clientes</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="sectoresDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Sectores
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="sectoresDropdown">
+                                        <a class="dropdown-item" href="{% url 'contabilidad' %}">Contabilidad</a>
+                                        <a class="dropdown-item" href="{% url 'financiero' %}">Financiero</a>
+                                        <a class="dropdown-item" href="{% url 'societario' %}">Societario</a>
+                                    </div>
+                                </li>
+                            {% elif 'Guest' in user_groups %}
+                                <!-- Guest solo ven las opciones por defecto -->
                             {% endif %}
                             <li class="nav-item">
                                 <form method="post" action="{% url 'logout' %}" style="display: inline;">
@@ -69,7 +123,7 @@
         </nav>
     </header>
 
-    <main class="container mt-5">
+    <main role="main" class="container">
         {% block content %}
         {% endblock %}
     </main>
@@ -77,13 +131,13 @@
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
             <span class="text-muted">&copy; 2024 Club del QR</span>
-            <button id="theme-toggle" class="btn btn-primary">Toggle Dark/Light</button>
+            <button id="theme-toggle" class="btn btn-sm btn-outline-primary float-right">🌞 🌜</button>
         </div>
     </footer>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
     <script src="{% static 'js/scripts.js' %}"></script>

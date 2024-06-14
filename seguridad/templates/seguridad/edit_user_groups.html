@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Edit User Groups{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Edit Groups for {{ user.username }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="groups">Select Groups:</label>
+            <select id="groups" name="groups" multiple class="selectpicker form-control" data-style="btn-primary">
+                {% for group in all_groups %}
+                    <option value="{{ group.id }}" {% if group in user.groups.all %}selected{% endif %}>{{ group.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="{% url 'user_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

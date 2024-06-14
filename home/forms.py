@@ -22,3 +22,14 @@ class CustomUserCreationForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+class ProfileForm(forms.ModelForm):
+    first_name = forms.CharField(required=False, max_length=30, label='First Name')
+    last_name = forms.CharField(required=False, max_length=30, label='Last Name')
+    email = forms.EmailField(required=True, label='Email')
+    address = forms.CharField(required=False, max_length=255, label='Address')
+    phone = forms.CharField(required=False, max_length=15, label='Phone')
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email', 'address', 'phone']

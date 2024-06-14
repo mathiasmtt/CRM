@@ -25,7 +25,11 @@ urlpatterns = [
     path('about_us/', home_views.about_us, name='about_us'),
     path('contact_us/', home_views.contact_us, name='contact_us'),
     path('register/', home_views.register, name='register'),
-    path('accounts/profile/', home_views.profile, name='profile'),  # Añadir esta línea
+    path('profile/', home_views.profile, name='profile'),  # Mantener esta línea
+    path('edit_profile/', home_views.edit_profile, name='edit_profile'),  # Añadir esta línea
+    path('contabilidad/', home_views.contabilidad, name='contabilidad'),  # Añadir esta línea
+    path('financiero/', home_views.financiero, name='financiero'),  # Añadir esta línea
+    path('societario/', home_views.societario, name='societario'),  # Añadir esta línea
     path('accounts/', include('django.contrib.auth.urls')),  # Asegúrate de que esta línea está presente
     path('propietarios/', include('modulo_propietarios.urls')),
     path('clientes/', include('modulo_clientes.urls')),

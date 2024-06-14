@@ -1,56 +1,76 @@
 body {
     margin-top: 20px;
-    color: #1a202c;
+    color: #4a4a4a;
     text-align: left;
-    background-color: #e2e8f0;
+    background-color: #f8f9fa; /* Fondo pastel claro */
+    transition: background-color 0.3s, color 0.3s;
 }
+
 .main-body {
     padding: 15px;
 }
+
 .card {
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     margin-bottom: 1.5rem;
+    background-color: #ffffff; /* Fondo de tarjeta claro */
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
+
 .card-body {
     padding: 1.5rem;
 }
+
 .bg-primary {
-    background-color: #007bff !important;
+    background-color: #ff6f61 !important; /* Color primario pastel */
 }
+
 .p-1 {
     padding: 0.25rem !important;
 }
+
 .rounded-circle {
     border-radius: 50% !important;
 }
+
 .mt-3 {
     margin-top: 1rem !important;
 }
+
 .text-secondary {
     color: #6c757d !important;
 }
+
 .text-muted {
     color: #6c757d !important;
 }
+
 .font-size-sm {
     font-size: 0.875rem !important;
 }
+
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #ff6f61;
+    border-color: #ff6f61;
     color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
 }
+
 .btn-outline-primary {
-    color: #007bff;
-    border-color: #007bff;
+    color: #ff6f61;
+    border-color: #ff6f61;
+    transition: color 0.3s, border-color 0.3s;
 }
+
 .progress {
     height: 5px;
 }
+
 .progress-bar {
     height: 5px;
 }
+
 .list-group-item {
     display: flex;
     justify-content: space-between;
@@ -60,26 +80,70 @@ body {
 
 /* CSS para el toggle dark/light */
 body.dark-mode {
-    background-color: #333;
-    color: #fff;
+    background-color: #2a2a2a; /* Fondo pastel oscuro */
+    color: #e0e0e0;
+    transition: background-color 0.3s, color 0.3s;
 }
-body.dark-mode .navbar-light {
-    background-color: #555;
+
+body.dark-mode .navbar, body.dark-mode .footer {
+    background-color: #3e3e3e !important; /* Navbar y Footer oscuros */
+    color: #e0e0e0;
 }
+
 body.dark-mode .card {
-    background-color: #444;
-    color: #fff;
+    background-color: #3e3e3e; /* Fondo de tarjeta oscuro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
 }
+
 body.dark-mode .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #8e44ad; /* Botón primario pastel oscuro */
+    border-color: #8e44ad;
 }
+
 body.dark-mode .btn-outline-primary {
-    color: #007bff;
-    border-color: #007bff;
+    color: #8e44ad;
+    border-color: #8e44ad;
 }
-#theme-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+
+body.dark-mode .text-secondary {
+    color: #b0b0b0 !important; /* Texto secundario pastel oscuro */
+}
+
+body.dark-mode .text-muted {
+    color: #a0a0a0 !important; /* Texto mutado pastel oscuro */
+}
+
+.navbar {
+    background-color: #f8f9fa; /* Navbar claro */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.footer {
+    background-color: #f8f9fa; /* Footer claro */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilos para tablas */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    background-color: transparent;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+body.dark-mode .table {
+    color: #e0e0e0;
+}
+
+body.dark-mode .table th,
+body.dark-mode .table td {
+    border-color: #4e4e4e;
 }

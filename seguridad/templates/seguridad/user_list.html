@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2>User List</h2>
+    <h1 class="mb-4">User List</h1>
     <table class="table">
         <thead>
             <tr>
@@ -19,10 +19,14 @@
                 <tr>
                     <td>{{ user.username }}</td>
                     <td>{{ user.email }}</td>
-                    <td>{{ user.groups.all|join:", " }}</td>
                     <td>
-                        <a class="btn btn-primary" href="#">Edit Groups</a>
-                        <a class="btn btn-danger" href="#">Delete</a>
+                        {% for group in user.groups.all %}
+                            {{ group.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <a href="{% url 'edit_user_groups' user.id %}" class="btn btn-outline-primary">Edit Groups</a>
+                        <a href="{% url 'delete_user' user.id %}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             {% endfor %}
